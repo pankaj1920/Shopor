@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".views.fragment.dashboard.setting.SettingFragment">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivAppLogo"
+            style="@style/IconImageView"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:src="@drawable/app_logo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/black" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Text.Basic"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/profile"
+            android:textSize="@dimen/_14ssp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/ivAppLogo"
+            app:layout_constraintStart_toEndOf="@id/ivAppLogo"
+            app:layout_constraintTop_toTopOf="@id/ivAppLogo" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivMore"
+            style="@style/IconImageView"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:src="@drawable/ic_more"
+            app:layout_constraintBottom_toBottomOf="@id/ivAppLogo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ivAppLogo"
+            app:tint="@color/black" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivProfileImage"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:src="@drawable/img_profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivAppLogo" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivPicker"
+            style="@style/IconImageView"
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:background="@drawable/bg_square"
+            android:padding="@dimen/_6sdp"
+            android:src="@drawable/ic_pen"
+            app:layout_constraintBottom_toBottomOf="@id/ivProfileImage"
+            app:layout_constraintEnd_toEndOf="@id/ivProfileImage"
+            app:tint="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvProfileName"
+            style="@style/Text.PoppinSemiBold"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:text="@string/andrew_ainsley"
+            android:textSize="@dimen/_18ssp"
+            app:layout_constraintEnd_toEndOf="@id/ivMore"
+            app:layout_constraintStart_toStartOf="@id/ivAppLogo"
+            app:layout_constraintTop_toBottomOf="@id/ivProfileImage" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvMobile"
+            style="@style/Text.Basic"
+            android:layout_width="@dimen/standard_0"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="@string/sample_numebr"
+            app:layout_constraintEnd_toEndOf="@id/tvProfileName"
+            app:layout_constraintStart_toStartOf="@id/tvProfileName"
+            app:layout_constraintTop_toBottomOf="@id/tvProfileName" />
+
+        <View
+            android:id="@+id/v1"
+            android:layout_width="@dimen/standard_0"
+            android:layout_height="@dimen/standard_1"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@color/light_grey"
+            app:layout_constraintEnd_toEndOf="@id/ivMore"
+            app:layout_constraintStart_toStartOf="@id/ivAppLogo"
+            app:layout_constraintTop_toBottomOf="@id/tvMobile" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvProfile"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/standard_0"
+            android:layout_marginTop="@dimen/_10sdp"
+            tools:listitem="@layout/inflate_setting"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/v1" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".views.fragment.launcher.welcome.WelcomeFragment">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivWlcm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/wlcm"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/_20sdp"
+            android:background="@drawable/bg_wlcm_gradient"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvWlcmH2"
+            style="@style/Text.PoppinSemiBold"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:text="@string/welcome_to"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_32ssp"
+            app:layout_constraintBottom_toTopOf="@id/tvWlcmH1"
+            app:layout_constraintStart_toStartOf="@id/tvWlcmDec" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvWlcmH1"
+            style="@style/Text.PoppinBold"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="@string/wlcm_h1"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_32ssp"
+            app:layout_constraintBottom_toTopOf="@id/tvWlcmDec"
+            app:layout_constraintStart_toStartOf="@id/tvWlcmDec" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvWlcmDec"
+            style="@style/Text.Basic"
+            android:layout_width="@dimen/standard_0"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_25sdp"
+            android:text="@string/wlcm_dec"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14ssp"
+            android:fontFamily="@font/poppins_medium"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivReviewProfile"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_margin="@dimen/_10sdp"
+        android:src="@drawable/img_review"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvProductTitle"
+        style="@style/Text.PoppinSemiBold"
+        android:layout_width="@dimen/standard_0"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="@string/smaple_product_title"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintBottom_toBottomOf="@id/ivReviewProfile"
+        app:layout_constraintStart_toEndOf="@id/ivReviewProfile"
+        app:layout_constraintTop_toTopOf="@id/ivReviewProfile" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/Text.Basic"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="@drawable/bg_categories"
+        android:drawableStart="@drawable/ic_star"
+        android:drawablePadding="@dimen/_3sdp"
+        android:paddingStart="@dimen/_10sdp"
+        android:paddingTop="@dimen/_4sdp"
+        android:paddingEnd="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_4sdp"
+        android:text="@string/sample_rating"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintBottom_toBottomOf="@id/ivReviewProfile"
+        app:layout_constraintEnd_toStartOf="@id/ivMore"
+        app:layout_constraintTop_toTopOf="@id/ivReviewProfile" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivMore"
+        style="@style/IconImageView"
+        android:layout_width="@dimen/_25sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:src="@drawable/ic_more"
+        app:layout_constraintBottom_toBottomOf="@id/ivReviewProfile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ivReviewProfile"
+        app:tint="@color/black" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvReview"
+        style="@style/Text.Basic"
+        android:layout_width="@dimen/standard_0"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="@string/smaple_review"
+        android:textColor="@color/grey"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintEnd_toEndOf="@+id/ivMore"
+        app:layout_constraintStart_toStartOf="@id/ivReviewProfile"
+        app:layout_constraintTop_toBottomOf="@id/ivReviewProfile" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivHeart"
+        style="@style/IconImageView"
+        android:layout_width="@dimen/_25sdp"
+        android:layout_marginTop="@dimen/_7sdp"
+        android:src="@drawable/ic_heart_filled"
+        app:layout_constraintStart_toStartOf="@id/tvReview"
+        app:layout_constraintTop_toBottomOf="@id/tvReview"
+        app:tint="@color/black" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvLike"
+        style="@style/Text.Basic"
+        android:layout_width="@dimen/standard_0"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:text="@string/like_count"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivHeart"
+        app:layout_constraintStart_toEndOf="@+id/ivHeart"
+        app:layout_constraintTop_toTopOf="@+id/ivHeart" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDate"
+        style="@style/Text.Basic"
+        android:layout_width="@dimen/standard_0"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:text="@string/_6_days_ago"
+        android:textColor="@color/grey"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvLike"
+        app:layout_constraintStart_toEndOf="@+id/tvLike"
+        app:layout_constraintTop_toTopOf="@+id/tvLike" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

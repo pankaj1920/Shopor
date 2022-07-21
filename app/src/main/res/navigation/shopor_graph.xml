@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/shopor_graph"
+    app:startDestination="@id/launcherFragment">
+    <fragment
+        android:id="@+id/launcherFragment"
+        android:name="com.nosense.shopor.views.fragment.launcher.launcher.LauncherFragment"
+        android:label="LauncherFragment"
+        tools:layout="@layout/fragment_launcher" />
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.nosense.shopor.views.fragment.launcher.welcome.WelcomeFragment"
+        android:label="WelcomeFragment"
+        tools:layout="@layout/fragment_welcome" />
+    <fragment
+        android:id="@+id/introSliderFragment2"
+        android:name="com.nosense.shopor.views.fragment.launcher.intro.IntroSliderFragment"
+        android:label="fragment_intro_slider"
+        tools:layout="@layout/fragment_intro_slider" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.nosense.shopor.views.fragment.auth.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login" />
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.nosense.shopor.views.fragment.auth.register.RegisterFragment"
+        android:label="RegisterFragment"
+        tools:layout="@layout/fragment_register" />
+
+    <fragment
+        android:id="@+id/forgotPasswordFragment"
+        android:name="com.nosense.shopor.views.fragment.auth.forgot_pass.ForgotPasswordFragment"
+        android:label="ForgotPasswordFragment"
+        tools:layout="@layout/fragment_forgot_password" />
+
+    <fragment
+        android:id="@+id/enterOtpFragment"
+        android:name="com.nosense.shopor.views.fragment.auth.enter_otp.EnterOtpFragment"
+        android:label="EnterOtpFragment"
+        tools:layout="@layout/fragment_enter_otp" />
+
+    <fragment
+        android:id="@+id/createPasswordFragment"
+        android:name="com.nosense.shopor.views.fragment.auth.create_password.CreatePasswordFragment"
+        android:label="CreatePasswordFragment"
+        tools:layout="@layout/fragment_create_password" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.nosense.shopor.views.fragment.auth.profile.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/myWishlistFragment"
+        android:name="com.nosense.shopor.views.fragment.dashboard.wishlist.MyWishlistFragment"
+        android:label="MyWishlistFragment"
+        tools:layout="@layout/fragment_my_wishlist" />
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.nosense.shopor.views.fragment.dashboard.notification.NotificationFragment"
+        android:label="NotificationFragment"
+        tools:layout="@layout/fragment_notification" />
+    <fragment
+        android:id="@+id/specialOfferFragment"
+        android:name="com.nosense.shopor.views.fragment.dashboard.special_offer.SpecialOfferFragment"
+        android:label="SpecialOfferFragment"
+        tools:layout="@layout/fragment_special_offer" />
+    <fragment
+        android:id="@+id/mostPopularFragment"
+        android:name="com.nosense.shopor.views.fragment.dashboard.most_popular.MostPopularFragment"
+        android:label="MostPopularFragment"
+        tools:layout="@layout/fragment_most_popular"/>
+    <fragment
+        android:id="@+id/searchedFragment"
+        android:name="com.nosense.shopor.views.fragment.dashboard.search.SearchedFragment"
+        android:label="SearchedFragment"
+        tools:layout="@layout/fragment_searched"/>
+    <fragment
+        android:id="@+id/searchedProductFragment"
+        android:name="com.nosense.shopor.views.fragment.dashboard.searched_product.SearchedProductFragment"
+        android:label="SearchedProductFragment"
+        tools:layout="@layout/fragment_searched_product"/>
+    <fragment
+        android:id="@+id/categoryListFragment"
+        android:name="com.nosense.shopor.views.fragment.dashboard.category_list.CategoryListFragment"
+        android:label="CategoryListFragment"
+        tools:layout="@layout/fragment_category_list"/>
+    <fragment
+        android:id="@+id/productDetailsFragment"
+        android:name="com.nosense.shopor.views.fragment.dashboard.product_detail.ProductDetailsFragment"
+        android:label="ProductDetailsFragment"
+        tools:layout="@layout/fragment_product_details"/>
+    <fragment
+        android:id="@+id/productReviewFragment"
+        android:name="com.nosense.shopor.views.fragment.dashboard.product_review.ProductReviewFragment"
+        android:label="fragment_product_review"
+        tools:layout="@layout/fragment_product_review" />
+    <fragment
+        android:id="@+id/addPromoFragment"
+        android:name="com.nosense.shopor.views.fragment.dashboard.add_promo.AddPromoFragment"
+        android:label="fragment_add_promo"
+        tools:layout="@layout/fragment_add_promo" />
+    <fragment
+        android:id="@+id/myCartFragment"
+        android:name="com.nosense.shopor.views.fragment.dashboard.cart.MyCartFragment"
+        android:label="fragment_my_cart"
+        tools:layout="@layout/fragment_my_cart" />
+    <fragment
+        android:id="@+id/checkoutFragment"
+        android:name="com.nosense.shopor.views.fragment.dashboard.checkout.CheckoutFragment"
+        android:label="fragment_checkout"
+        tools:layout="@layout/fragment_checkout" />
+    <fragment
+        android:id="@+id/selectShipingAddressFragment"
+        android:name="com.nosense.shopor.views.fragment.dashboard.select_address.SelectShipingAddressFragment"
+        android:label="fragment_select_shiping_address"
+        tools:layout="@layout/fragment_select_shiping_address" />
+    <fragment
+        android:id="@+id/paymentMethodFragment"
+        android:name="com.nosense.shopor.views.fragment.dashboard.payment_method.PaymentMethodFragment"
+        android:label="fragment_payment_method"
+        tools:layout="@layout/fragment_payment_method" />
+    <fragment
+        android:id="@+id/completedFragment"
+        android:name="com.nosense.shopor.views.fragment.dashboard.my_order.completed.CompletedFragment"
+        android:label="fragment_completed"
+        tools:layout="@layout/fragment_completed" />
+    <fragment
+        android:id="@+id/ongoingFragment"
+        android:name="com.nosense.shopor.views.fragment.dashboard.my_order.ongoing.OngoingFragment"
+        android:label="fragment_ongoing"
+        tools:layout="@layout/fragment_ongoing" />
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.nosense.shopor.views.fragment.dashboard.setting.SettingFragment"
+        android:label="SettingFragment"
+        tools:layout="@layout/fragment_setting"/>
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.nosense.shopor.views.fragment.dashboard.setting.edit_profile.EditProfileFragment"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile" />
+    <fragment
+        android:id="@+id/addressListFragment"
+        android:name="com.nosense.shopor.views.fragment.dashboard.setting.address_list.AddressListFragment"
+        android:label="fragment_address_list"
+        tools:layout="@layout/fragment_address_list" />
+    <fragment
+        android:id="@+id/addAddressFragment"
+        android:name="com.nosense.shopor.views.fragment.dashboard.setting.add_address.AddAddressFragment"
+        android:label="fragment_add_address"
+        tools:layout="@layout/fragment_add_address" />
+    <fragment
+        android:id="@+id/notificationSettingFragment"
+        android:name="com.nosense.shopor.views.fragment.dashboard.setting.notification.NotificationSettingFragment"
+        android:label="fragment_notification_setting"
+        tools:layout="@layout/fragment_notification_setting" />
+    <fragment
+        android:id="@+id/faqFragment"
+        android:name="com.nosense.shopor.views.fragment.dashboard.setting.help.faq.FaqFragment"
+        android:label="fragment_faq"
+        tools:layout="@layout/fragment_faq" />
+    <fragment
+        android:id="@+id/contactUsFragment"
+        android:name="com.nosense.shopor.views.fragment.dashboard.setting.help.contactus.ContactUsFragment"
+        android:label="fragment_contact_us"
+        tools:layout="@layout/fragment_contact_us" />
+    <fragment
+        android:id="@+id/customerServiceFragment"
+        android:name="com.nosense.shopor.views.fragment.dashboard.setting.help.custom_service.CustomerServiceFragment"
+        android:label="fragment_customer_service"
+        tools:layout="@layout/fragment_customer_service" />
+</navigation>

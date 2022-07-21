@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".views.fragment.dashboard.search.SearchedFragment">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etSearch"
+            style="@style/BasicEditText"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:background="@drawable/bg_edit_text"
+            android:drawableStart="@drawable/ic_search"
+            android:drawablePadding="@dimen/_10sdp"
+            android:hint="@string/search_product"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvRecent"
+            style="@style/Text.PoppinSemiBold"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:text="@string/recent"
+            app:layout_constraintStart_toStartOf="@id/etSearch"
+            app:layout_constraintTop_toBottomOf="@id/etSearch" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvClearAll"
+            style="@style/Text.PoppinSemiBold"
+            android:text="@string/clear_all"
+            app:layout_constraintBottom_toBottomOf="@id/tvRecent"
+            app:layout_constraintEnd_toEndOf="@id/etSearch"
+            app:layout_constraintTop_toTopOf="@id/tvRecent" />
+
+        <View
+            android:id="@+id/v1"
+            android:layout_width="@dimen/standard_0"
+            android:layout_height="@dimen/standard_1"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@color/light_grey"
+            app:layout_constraintEnd_toEndOf="@id/etSearch"
+            app:layout_constraintStart_toStartOf="@id/etSearch"
+            app:layout_constraintTop_toBottomOf="@id/tvRecent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvRecentSearch"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/standard_0"
+            tools:itemCount="5"
+            tools:listitem="@layout/inflate_recent_search"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/v1"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

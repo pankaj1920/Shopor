@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryTrans">#A6000000</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#000000</color>
+    <color name="Gray">#EBEBEB</color>
+    <color name="GrayLight">#72F7F7F7</color>
+    <color name="quantity_bg">#E6E5E5</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="product_page_bg">#fbfbfb</color>
+    <color name="bgEditText">#F1F1F1</color>
+    <color name="borderFocused">#000000</color>
+    <color name="borderUnFocused">#F1F1F1</color>
+
+    <color name="iconFocused">#000000</color>
+    <color name="iconUnFocused">#F1F1F1</color>
+
+</resources>

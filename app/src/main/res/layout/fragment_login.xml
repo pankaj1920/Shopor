@@ -5,6 +5,9 @@
 
     <data>
 
+        <variable
+            name="clickListner"
+            type="com.nosense.shopor.views.fragment.auth.login.LoginFragment" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -97,6 +100,7 @@
         <androidx.appcompat.widget.AppCompatTextView
             style="@style/Text.PoppinSemiBold"
             android:layout_marginTop="@dimen/_25sdp"
+            android:onClick="@{clickListner::onForgotPasswordClicked}"
             android:text="@string/forgot_the_password"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -121,6 +125,7 @@
                 android:id="@+id/tvSignUp"
                 style="@style/Text.Basic"
                 android:fontFamily="@font/poppins_semibold"
+                android:onClick="@{clickListner::onSignUpClicked}"
                 android:paddingStart="@dimen/_10sdp"
                 android:text="@string/sign_up"
                 app:layout_constraintBottom_toBottomOf="@id/tvAlready"

@@ -1,4 +1,5 @@
 package com.payments.appbase.utils_base
+
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
@@ -59,7 +60,7 @@ fun Fragment.navigateToWithResult(bundle: Bundle?, className: String): Intent {
     return i
 }
 
-fun Fragment.navigateNew( className: String,bundle: Bundle?) {
+fun Fragment.navigateNew(className: String, bundle: Bundle?) {
     val i = Intent()
     i.setClassName(requireContext(), className)
 
@@ -85,7 +86,8 @@ fun NavController.navigateNew(id: Int, graphId: Int, bundle: Bundle? = null) {
         this.navigate(id)
 }
 
-fun NavController.navigateTo(id: Int, bundle: Bundle? = null) {
+fun NavController.navigateTo(id: Int, bundle: Bundle? = null, removeBackStack: Boolean = false) {
+//    if (removeBackStack) this.popBackStack(id, false)
     if (bundle != null)
         this.navigate(id, bundle)
     else

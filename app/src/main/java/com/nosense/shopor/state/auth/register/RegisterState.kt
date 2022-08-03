@@ -1,4 +1,6 @@
 package com.nosense.shopor.state.auth.register
 
-class RegisterState {
+sealed class RegisterState {
+    object Init : RegisterState()
+    object NavigateToLogin:RegisterState()
 }

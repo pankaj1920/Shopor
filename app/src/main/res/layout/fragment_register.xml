@@ -5,6 +5,9 @@
 
     <data>
 
+        <variable
+            name="clickListner"
+            type="com.nosense.shopor.views.fragment.auth.register.RegisterFragment" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -87,6 +90,7 @@
             android:layout_width="@dimen/standard_0"
             android:layout_marginTop="@dimen/_30sdp"
             android:backgroundTint="@color/black"
+            android:onClick="@{clickListner::onLoginClicked}"
             android:padding="@dimen/_15sdp"
             android:text="@string/sign_up"
             app:layout_constraintEnd_toEndOf="@id/etPassword"
@@ -112,6 +116,7 @@
                 android:id="@+id/tvSignIn"
                 style="@style/Text.Basic"
                 android:fontFamily="@font/poppins_semibold"
+                android:onClick="@{clickListner::onLoginClicked}"
                 android:paddingStart="@dimen/_10sdp"
                 android:text="@string/sign_in"
                 app:layout_constraintBottom_toBottomOf="@id/tvAlready"

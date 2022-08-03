@@ -5,19 +5,43 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.nosense.shopor.R
+import com.nosense.shopor.databinding.FragmentRegisterBinding
+import com.nosense.shopor.state.auth.register.RegisterState
+import com.nosense.shopor.viewmodel.auth.RegisterViewModel
+import com.payments.appbase.utils_base.navigateTo
+import com.payments.appbase.view_base.BaseFragment
+import com.payments.appbase.viewmodel_base.BaseViewModel
 
 
-class RegisterFragment : Fragment() {
+class RegisterFragment : BaseFragment<RegisterViewModel, FragmentRegisterBinding>() {
 
+    override val mViewModel: RegisterViewModel by viewModels()
+    override val layoutId: Int = R.layout.fragment_register
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_register, container, false)
+    override fun onFragmentCreated() {
+        mViewBinding.clickListner = this
     }
 
+    override fun subscribeObservers() {
+        mViewModel.stateObserver.observe(this) {
+            when (it) {
+                RegisterState.NavigateToLogin -> {
+                    findNavController().navigateTo(R.id.loginFragment)
+                }
+            }
+        }
+    }
+
+
+    fun onSignUpClicked(view: View) {
+
+    }
+
+    fun onLoginClicked(view: View) {
+        mViewModel.navigateToLogin()
+    }
 
 }

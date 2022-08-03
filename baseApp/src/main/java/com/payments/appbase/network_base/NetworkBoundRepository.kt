@@ -3,6 +3,7 @@ package com.payments.b2b.app_base.network
 
 import com.google.gson.Gson
 import com.payments.appbase.listner_base.BaseRepoListener
+import com.payments.appbase.model_base.BaseResponse
 import com.payments.appbase.model_base.ErrorResponse
 import com.payments.appbase.model_base.State
 import com.payments.appbase.utils_base.BaseConstants
@@ -56,6 +57,7 @@ abstract class NetworkBoundRepository<RESULT>(
                     Print.log("Success => (NetworkBoundRepository) : ${remoteData}")
                     emit(State.success(remoteData))
                 } else {
+
                     emit(State.error(apiResponse.message()))
                     iRepositoryListener?.showErrorMessage(apiResponse.message())
                     Print.log("Error => (NetworkBoundRepository) : ${apiResponse.message()}")

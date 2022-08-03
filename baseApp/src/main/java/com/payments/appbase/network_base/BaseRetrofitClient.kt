@@ -19,7 +19,6 @@ open class BaseRetrofitClient(var iRepositoryListener: BaseRepoListener?) {
             .baseUrl(BaseMapping.getBaseUrl(networkUtils))
             .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient)
-
             .build()
     }
 
@@ -41,7 +40,7 @@ open class BaseRetrofitClient(var iRepositoryListener: BaseRepoListener?) {
         okHttpClientBuilder.addInterceptor { chain ->
             val original = chain.request()
             val request = original.newBuilder()
-                .header(BaseConstants.Header.AUTHORIZATION, "Token 684d95419c7ce5768b937abf6b71c36df7021290")
+//                .header(BaseConstants.Header.AUTHORIZATION, "Token 684d95419c7ce5768b937abf6b71c36df7021290")
                 .method(original.method, original.body)
                 .build()
             chain.proceed(request)

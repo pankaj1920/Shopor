@@ -8,6 +8,10 @@
         <variable
             name="clickListner"
             type="com.nosense.shopor.views.fragment.auth.register.RegisterFragment" />
+
+        <variable
+            name="viewModel"
+            type="com.nosense.shopor.viewmodel.auth.RegisterViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -48,6 +52,7 @@
             android:paddingTop="@dimen/_10sdp"
             android:paddingEnd="@dimen/_10sdp"
             android:paddingBottom="@dimen/_10sdp"
+            android:text="@={viewModel.registerRequestData.email}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvCreateAccount" />
@@ -66,6 +71,7 @@
             android:paddingTop="@dimen/_10sdp"
             android:paddingEnd="@dimen/_10sdp"
             android:paddingBottom="@dimen/_10sdp"
+            android:text="@={viewModel.registerRequestData.password}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/etEmail" />
@@ -79,6 +85,7 @@
             android:paddingStart="@dimen/_5sdp"
             android:text="@string/remember_me"
             android:textSize="@dimen/_14ssp"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="@id/etPassword"
             app:layout_constraintStart_toStartOf="@id/etPassword"
             app:layout_constraintTop_toBottomOf="@id/etPassword"
@@ -90,7 +97,7 @@
             android:layout_width="@dimen/standard_0"
             android:layout_marginTop="@dimen/_30sdp"
             android:backgroundTint="@color/black"
-            android:onClick="@{clickListner::onLoginClicked}"
+            android:onClick="@{clickListner::onSignUpClicked}"
             android:padding="@dimen/_15sdp"
             android:text="@string/sign_up"
             app:layout_constraintEnd_toEndOf="@id/etPassword"

@@ -23,6 +23,8 @@ class RegisterFragment : BaseFragment<RegisterViewModel, FragmentRegisterBinding
 
     override fun onFragmentCreated() {
         mViewBinding.clickListner = this
+        mViewBinding.viewModel = mViewModel
+
     }
 
     override fun subscribeObservers() {
@@ -37,7 +39,7 @@ class RegisterFragment : BaseFragment<RegisterViewModel, FragmentRegisterBinding
 
 
     fun onSignUpClicked(view: View) {
-
+        mViewModel.register(baseRepoListener = iBaseRepoListener)
     }
 
     fun onLoginClicked(view: View) {

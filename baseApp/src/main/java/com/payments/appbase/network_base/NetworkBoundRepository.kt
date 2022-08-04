@@ -6,6 +6,8 @@ import com.payments.appbase.listner_base.BaseRepoListener
 import com.payments.appbase.model_base.BaseResponse
 import com.payments.appbase.model_base.ErrorResponse
 import com.payments.appbase.model_base.State
+import com.payments.appbase.network_base.CheckResponseUtils
+import com.payments.appbase.network_base.CheckResponseUtils.isSuccessfulRequest
 import com.payments.appbase.utils_base.BaseConstants
 import com.payments.appbase.utils_base.Print
 import kotlinx.coroutines.Dispatchers
@@ -42,11 +44,14 @@ abstract class NetworkBoundRepository<RESULT>(
 
             // Parse body
             val remoteData: RESULT?
+            val baseResponse: BaseResponse?
 
             withContext(Dispatchers.IO) {
 
                 apiResponse = fetchData()
                 remoteData = apiResponse.body()
+
+//                baseResponse = apiResponse.body() as BaseResponse
             }
             iRepositoryListener?.hideLoader()
 
@@ -54,8 +59,17 @@ abstract class NetworkBoundRepository<RESULT>(
             if (apiResponse.isSuccessful && remoteData != null) {
                 // Save posts into the persistence storage
                 if (apiResponse.code() == BaseConstants.InternalHttpCode.SUCCESS || apiResponse.code() == BaseConstants.InternalHttpCode.ACCEPTED) {
-                    Print.log("Success => (NetworkBoundRepository) : ${remoteData}")
-                    emit(State.success(remoteData))
+
+                    // Checking  if status and status code is success or Failed in api response
+                    if (isSuccessfulRequest(baseResponse?.statuscode.toString()) || isSuccessfulRequest(
+                            baseResponse?.status.toString()
+                        )
+                    ) {
+                        emit(State.success(remoteData))
+                    } else {
+                        emit(State.error(baseResponse?.message.toString()))
+                    }
+
                 } else {
 
                     emit(State.error(apiResponse.message()))

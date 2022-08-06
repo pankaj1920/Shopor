@@ -30,17 +30,39 @@ interface BaseConstants {
         }
     }
 
-    interface InternalHttpCode {
+    interface ErrorCode {
+        companion object {
+            const val BAD_REQUEST = 400
+            const val UNAUTHORIZED = 401
+            const val FORBIDDEN = 403
+            const val NOT_FOUND = 404
+            const val INTERNAL_SERVER_ERROR = 500
+            const val SERVICE_UNAVAILABLE = 503
+            const val GATEWAY_TIMEOUT = 504
+            const val HTTP_VERSION_NOT_SUPPORTED = 503
+            const val SOMETHING_WENT_WRONG = 505
+
+        }
+    }
+
+    interface SuccessCode {
         companion object {
             const val SUCCESS = 200
             const val ACCEPTED = 202
-            const val FAILURE_CODE = 404
-            const val BAD_REQUEST_CODE = 400
-            const val UNAUTHORIZED_CODE = 401
-            const val INTERNAL_SERVER_ERROR_CODE = 500
-            const val TIMEOUT_CODE = 504
         }
     }
+
+    interface SuccessStatus {
+        companion object {
+            const val TRUE = "TRUE"
+            const val SUCCESS = "SUCCESS"
+            const val TXN = "TXN"
+            const val TXNOTP = "TXNOTP"
+            const val TUP = "TUP"
+            const val Pending = "Pending"
+        }
+    }
+
 
     interface HttpErrorMessage {
         companion object {
@@ -51,9 +73,11 @@ interface BaseConstants {
         }
 
     }
-    interface  AuthKey{
-        companion object{
-            const val AUTH_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZUlkIjozLCJpYXQiOjE2MjgwNTcyMjd9.cdGGIUyWECI_Dq16cbJrHjEJ7wh5GPwktFBgHtbs-6E"
+
+    interface AuthKey {
+        companion object {
+            const val AUTH_KEY =
+                "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZUlkIjozLCJpYXQiOjE2MjgwNTcyMjd9.cdGGIUyWECI_Dq16cbJrHjEJ7wh5GPwktFBgHtbs-6E"
         }
     }
 }

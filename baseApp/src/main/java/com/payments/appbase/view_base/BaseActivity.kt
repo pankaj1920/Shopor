@@ -88,6 +88,7 @@ abstract class BaseActivity<VM : BaseViewModel<*>, VB : ViewDataBinding> : AppCo
 
     override fun showErrorMessage(message: String) {
         Print.log("Error Message : $message")
+        toastMessage(message)
     }
 
 

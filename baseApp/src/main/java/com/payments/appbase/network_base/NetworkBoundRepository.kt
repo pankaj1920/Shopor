@@ -51,15 +51,15 @@ abstract class NetworkBoundRepository<RESULT>(
                 apiResponse = fetchData()
                 remoteData = apiResponse.body()
 
-//                baseResponse = apiResponse.body() as BaseResponse
+
             }
             iRepositoryListener?.hideLoader()
 
             // Check for response validation
             if (apiResponse.isSuccessful && remoteData != null) {
+                baseResponse = apiResponse.body() as BaseResponse
                 // Save posts into the persistence storage
-                if (apiResponse.code() == BaseConstants.InternalHttpCode.SUCCESS || apiResponse.code() == BaseConstants.InternalHttpCode.ACCEPTED) {
-
+                if (apiResponse.code() == BaseConstants.SuccessCode.SUCCESS || apiResponse.code() == BaseConstants.SuccessCode.ACCEPTED) {
                     // Checking  if status and status code is success or Failed in api response
                     if (isSuccessfulRequest(baseResponse?.statuscode.toString()) || isSuccessfulRequest(
                             baseResponse?.status.toString()
@@ -76,22 +76,13 @@ abstract class NetworkBoundRepository<RESULT>(
                     iRepositoryListener?.showErrorMessage(apiResponse.message())
                     Print.log("Error => (NetworkBoundRepository) : ${apiResponse.message()}")
                 }
-            } else if (apiResponse.code() == BaseConstants.InternalHttpCode.UNAUTHORIZED_CODE) {
-                Print.log("UNAUTHORIZED Access")
             } else {
                 // Something went wrong! Emit Error state.
-                Print.log("Error Body : " + apiResponse.errorBody())
-                Print.log("Body : " + apiResponse.body())
-                val error: ErrorResponse? = getObjectFromJsonString(
-                    apiResponse.errorBody().toString(),
-                    ErrorResponse::class.java
-                )
+                /*  Print.log("Response Code : " + apiResponse.code())
+                  Print.log("Response message : " + apiResponse.message())*/
+                iRepositoryListener?.showErrorMessage(CheckResponseUtils.isErrorMessage(apiResponse.code()))
+                emit(State.error(CheckResponseUtils.isErrorMessage(apiResponse.code())))
 
-                error?.message?.let {
-                    iRepositoryListener?.showErrorMessage(apiResponse.message())
-                    Print.log("Something => (NetworkBoundRepository) : ${error.message!!}")
-                    emit(State.error(error.message!!))
-                }
             }
         }
     }.catch { e ->

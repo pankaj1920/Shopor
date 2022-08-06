@@ -4,8 +4,8 @@ import androidx.databinding.BaseObservable
 import androidx.databinding.Bindable
 
 class RegisterRequest(
-    email: String = "",
-    password: String = ""
+    email: String = "p@gmail.com",
+    password: String = "ppp"
 ) : BaseObservable() {
 
     @get:Bindable

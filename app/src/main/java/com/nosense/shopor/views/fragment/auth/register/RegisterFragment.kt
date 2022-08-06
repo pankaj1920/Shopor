@@ -11,7 +11,9 @@ import com.nosense.shopor.R
 import com.nosense.shopor.databinding.FragmentRegisterBinding
 import com.nosense.shopor.state.auth.register.RegisterState
 import com.nosense.shopor.viewmodel.auth.RegisterViewModel
+import com.payments.appbase.utils_base.Toaster
 import com.payments.appbase.utils_base.navigateTo
+import com.payments.appbase.utils_base.toastMessage
 import com.payments.appbase.view_base.BaseFragment
 import com.payments.appbase.viewmodel_base.BaseViewModel
 
@@ -30,8 +32,11 @@ class RegisterFragment : BaseFragment<RegisterViewModel, FragmentRegisterBinding
     override fun subscribeObservers() {
         mViewModel.stateObserver.observe(this) {
             when (it) {
-                RegisterState.NavigateToLogin -> {
+                is RegisterState.NavigateToLogin -> {
                     findNavController().navigateTo(R.id.loginFragment)
+                }
+                is RegisterState.SHOW_ERROR -> {
+                    toastMessage(it.errorMessage)
                 }
             }
         }

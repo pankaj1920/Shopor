@@ -33,24 +33,19 @@ class RegisterViewModel : BaseViewModel<RegisterState>() {
             ModelRepository(baseRepoListener).register(registerRequestData).collect {
                 when (it) {
                     is State.Success -> {
-                        handleSuccess(it.data)
+                        registerState = RegisterState.SHOW_SUCCESS(it.data)
                     }
 
                     is State.Error -> {
-                        Print.log("Register Error ${it.message}")
                         registerState = RegisterState.SHOW_ERROR(it.message)
                     }
+
                 }
             }
         }
 
     }
 
-    private fun handleSuccess(response: RegisterResponse) {
-        response.message?.let { message ->
-            Print.log("Register Success $message")
-        }
-    }
 
     fun navigateToLogin() {
         registerState = RegisterState.NavigateToLogin

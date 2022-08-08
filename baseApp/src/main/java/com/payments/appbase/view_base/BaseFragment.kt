@@ -5,11 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
+import androidx.annotation.RawRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.payments.appbase.R
+import com.payments.appbase.databinding.ErrorLayoutBinding
 import com.payments.appbase.listner_base.BaseRepoListener
 import com.payments.appbase.utils_base.*
 import com.payments.appbase.utils_base.session.SessionManager
@@ -74,9 +76,9 @@ abstract class BaseFragment<VM : BaseViewModel<*>, VB : ViewDataBinding> : Fragm
         }
     }
 
-    private fun initLoader(){
-        mViewModel.baseLiveData.observe(viewLifecycleOwner){
-            when(it.first){
+    private fun initLoader() {
+        mViewModel.baseLiveData.observe(viewLifecycleOwner) {
+            when (it.first) {
                 BaseConstants.BaseKeys.SHOW_LOADER -> showLoader()
                 BaseConstants.BaseKeys.SHOW_LOADER_MESSAGE -> showMessage(it.second as String)
                 BaseConstants.BaseKeys.HIDE_LOADER -> hideLoader()
@@ -109,5 +111,7 @@ abstract class BaseFragment<VM : BaseViewModel<*>, VB : ViewDataBinding> : Fragm
 
     override fun showErrorMessage(message: String) {
         Print.log("Error Message => $message")
+        showBottomDialog(message)
     }
+
 }

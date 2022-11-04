@@ -39,8 +39,6 @@ interface BaseConstants {
             const val INTERNAL_SERVER_ERROR = 500
             const val SERVICE_UNAVAILABLE = 503
             const val GATEWAY_TIMEOUT = 504
-            const val HTTP_VERSION_NOT_SUPPORTED = 503
-            const val SOMETHING_WENT_WRONG = 505
 
         }
     }

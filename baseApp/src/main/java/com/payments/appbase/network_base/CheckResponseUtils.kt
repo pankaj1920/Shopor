@@ -22,7 +22,6 @@ object CheckResponseUtils {
             BaseConstants.ErrorCode.INTERNAL_SERVER_ERROR -> "Internal Server Error"
             BaseConstants.ErrorCode.SERVICE_UNAVAILABLE -> "Service Unavailable"
             BaseConstants.ErrorCode.GATEWAY_TIMEOUT -> "Gateway Timeout"
-            BaseConstants.ErrorCode.HTTP_VERSION_NOT_SUPPORTED -> "HTTP Version Not Supported"
             else -> "Something went wrong"
 
         }
